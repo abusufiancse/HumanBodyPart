@@ -17,12 +17,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Body Parts',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.orange,
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -38,7 +39,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HumanAnatomy(onChanged: _handleBodyPartSelection),
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        centerTitle: true,
+        title: const Text(
+          'Human Body Parts',
+        ),
+        titleTextStyle:
+            const TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+      ),
+      body: Center(child: HumanAnatomy(onChanged: _handleBodyPartSelection)),
     );
   }
 
@@ -51,14 +61,24 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Selected Body Part'),
-          content: Text('You selected: $selectedBodyPart'),
+          title: const Text(
+            'Your Selected Body Part',
+            style: TextStyle(color: Colors.orange),
+          ),
+          content: Text(
+            '$selectedBodyPart',
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
               },
-              child: Text('OK'),
+              child: const Text('OK',
+                  style: TextStyle(color: Colors.orange, fontSize: 18)),
             ),
           ],
         );
