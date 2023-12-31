@@ -1,3 +1,3 @@
 # humanbody
 
-### Selectable body mapping
+Selectable body mapping
