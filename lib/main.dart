@@ -1,361 +1,287 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Body Parts Selector',
+      home: MyApp(),
+    ),
+  );
+}
+
+class BodyPart {
+  String name;
+  String description; // Added description field
+  Rect region;
+
+  BodyPart(
+      {required this.name, required this.description, required this.region});
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyBodyApp(),
-    );
-  }
-}
-
-class MyBodyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Human Body'),
-        titleTextStyle: const TextStyle(
-            color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-        centerTitle: true,
-        backgroundColor: Colors.orange,
+    List<BodyPart> bodyParts = [
+      BodyPart(
+        name: 'Head',
+        description:
+            'The upper part of the body that contains the brain and sensory organs.',
+        region: Rect.fromPoints(const Offset(160, 50), const Offset(250, 150)),
       ),
-      body: BodyImageWithClickableAreas(),
-    );
-  }
-}
+      BodyPart(
+        name: 'left Sholder',
+        description:
+            'The upper part of the body that contains the brain and sensory organs.',
+        region: Rect.fromPoints(const Offset(100, 190), const Offset(200, 150)),
+      ),
+      BodyPart(
+        name: 'RightSholder',
+        description:
+            'The upper part of the body that contains the brain and sensory organs.',
+        region: Rect.fromPoints(const Offset(300, 190), const Offset(200, 150)),
+      ),
+      BodyPart(
+        name: 'left arm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(90, 190), const Offset(150, 280)),
+      ),
+      BodyPart(
+        name: 'Right arm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(270, 280), const Offset(330, 190)),
+      ),
+      BodyPart(
+        name: 'Right forearm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(350, 350), const Offset(290, 280)),
+      ),
+      BodyPart(
+        name: 'left forearm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(120, 350), const Offset(60, 280)),
+      ),
+      BodyPart(
+        name: 'Right hand',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(350, 350), const Offset(290, 280)),
+      ),
+      BodyPart(
+        name: 'Right hand',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(390, 440), const Offset(320, 350)),
+      ),
+      BodyPart(
+        name: 'Right hand',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(20, 440), const Offset(90, 350)),
+      ),
+      BodyPart(
+        name: 'left chest',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(150, 270), const Offset(210, 190)),
+      ),
+      BodyPart(
+        name: 'Right chest',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(270, 270), const Offset(210, 190)),
+      ),
+      BodyPart(
+        name: 'Abdomen',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(265, 340), const Offset(145, 270)),
+      ),
+      BodyPart(
+        name: 'Pelvis',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(265, 410), const Offset(145, 340)),
+      ),
+      BodyPart(
+        name: 'Left Thigh',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(205, 500), const Offset(130, 410)),
+      ),
+      BodyPart(
+        name: 'Right Thigh',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(285, 500), const Offset(210, 410)),
+      ),
+      BodyPart(
+        name: 'right joint',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(285, 550), const Offset(210, 500)),
+      ),
+      BodyPart(
+        name: 'left joint',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(205, 550), const Offset(130, 500)),
+      ),
+      BodyPart(
+        name: 'left joint',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(205, 650), const Offset(130, 500)),
+      ),
+      BodyPart(
+        name: 'right leg',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(285, 550), const Offset(210, 650)),
+      ),
+      BodyPart(
+        name: 'right leg',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(295, 735), const Offset(220, 650)),
+      ),
+      BodyPart(
+        name: 'left leg',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(const Offset(200, 735), const Offset(120, 650)),
+      ),
+      // Add more body parts as needed
+    ];
 
-class BodyImageWithClickableAreas extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(
-          height: 20,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.orange,
+          centerTitle: true,
+          title: const Text(
+            'Body Parts Selector',
+            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
+          ),
         ),
-        Stack(
+        body: Stack(
           children: [
-            // Background Image of Human Body
-            Image.asset('images/front.png',
-                width: MediaQuery.of(context).size.width * 1,
-                fit: BoxFit.contain),
-
-            // Clickable Containers for Body Parts
-            // Upper part of the head
-            Positioned(
-              top: 5,
-              left: 162,
-              child: ClickableBodyPartContainer(
-                partName: 'Head',
-                partDescription: 'This is the Head.',
-                width: 90,
-                height: 105,
-              ),
+            Image.asset(
+              'images/front.png', // Replace with your image asset
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.contain,
             ),
-
-            // Two containers for body shoulder
-            Positioned(
-              bottom: 550,
-              left: 115,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Shoulder',
-                partDescription: 'This is the left shoulder.',
-                width: 92,
-                height: 40,
-              ),
-            ),
-            Positioned(
-              bottom: 550,
-              right: 115,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Shoulder',
-                partDescription: 'This is the Right shoulder.',
-                width: 92,
-                height: 40,
-              ),
-            ),
-            // Little height container for right arm and left arm
-
-            Positioned(
-              bottom: 470,
-              right: 80,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Arm',
-                partDescription: 'This is the Right Arm.',
-                width: 60,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 470,
-              left: 80,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Arm',
-                partDescription: 'This is the Left Arm.',
-                width: 60,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 490,
-              right: 137,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Chest',
-                partDescription: 'This is the Right Chest.',
-                width: 70,
-                height: 60,
-              ),
-            ),
-            Positioned(
-              bottom: 490,
-              left: 138,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Chest',
-                partDescription: 'This is the Left Chest.',
-                width: 70,
-                height: 60,
-              ),
-            ),
-            // Container for Abdomen
-            Positioned(
-              bottom: 410,
-              left: 140,
-              child: ClickableBodyPartContainer(
-                partName: 'Abdomen',
-                partDescription: 'This is the abdomen.',
-                width: 130,
-                height: 80,
-              ),
-            ),
-
-            // Two containers for right forearm and left forearm
-
-            Positioned(
-              bottom: 390,
-              left: 60,
-              child: ClickableBodyPartContainer(
-                partName: 'left Forearm',
-                partDescription: 'This is the left forearm.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 390,
-              right: 60,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Forearm',
-                partDescription: 'This is the right forearm.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            // Container for Pelvis
-
-            // Two containers for right hand and left hand
-            Positioned(
-              bottom: 300,
-              left: 20,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Hand',
-                partDescription: 'This is the left hand.',
-                width: 70,
-                height: 90,
-              ),
-            ),
-            Positioned(
-              bottom: 300,
-              right: 20,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Hand',
-                partDescription: 'This is the left hand.',
-                width: 70,
-                height: 90,
-              ),
-            ),
-            Positioned(
-              bottom: 330,
-              left: 130,
-              child: ClickableBodyPartContainer(
-                partName: 'Pelvis',
-                partDescription: 'This is the pelvis.',
-                width: 150,
-                height: 80,
-              ),
-            ),
-            // Two containers for left and right Thigh
-            Positioned(
-              bottom: 250,
-              left: 125,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Thigh',
-                partDescription: 'This is the left thigh.',
-                width: 80,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 250,
-              right: 125,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Thigh',
-                partDescription: 'This is the right thigh.',
-                width: 80,
-                height: 80,
-              ),
-            ),
-
-            // Serially two containers for leg joint, leg, and foot
-            Positioned(
-              bottom: 170,
-              left: 130,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Leg Joint',
-                partDescription: 'This is the leg joint.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 170,
-              right: 130,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Leg Joint',
-                partDescription: 'This is the leg joint.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 90,
-              left: 130,
-              child: ClickableBodyPartContainer(
-                partName: 'Left Leg',
-                partDescription: 'This is the leg.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 90,
-              right: 130,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Leg',
-                partDescription: 'This is the leg.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 10,
-              left: 120,
-              child: ClickableBodyPartContainer(
-                partName: 'left Foot',
-                partDescription: 'This is the left foot.',
-                width: 70,
-                height: 80,
-              ),
-            ),
-            Positioned(
-              bottom: 10,
-              right: 120,
-              child: ClickableBodyPartContainer(
-                partName: 'Right Foot',
-                partDescription: 'This is the Right foot.',
-                width: 80,
-                height: 80,
-              ),
-            ),
-            // Continue adding Positioned widgets for other body parts
-            Positioned(
-              bottom: 10,
-              right: 15,
-              child: InkWell(
-                focusColor: Colors.orange,
-                onTap: () {
-                  print('back part tap');
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey.shade300, width: 2),
-                    color: Colors.transparent,
-                  ),
-                  width: 80,
-                  height: 150,
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 10,
-              child: TextButton(
-                  onPressed: () {
-                    print('back part tap');
+            ...bodyParts.map((part) {
+              return Positioned.fromRect(
+                rect: part.region,
+                child: GestureDetector(
+                  onTap: () {
+                    showBodyPartDetails(context, part);
                   },
-                  child: const Text(
-                    'Back Part',
-                    style: TextStyle(color: Colors.grey),
-                  )),
-            ),
+                  onLongPress: () {
+                    editBodyPartName(context, part);
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.orange, width: 2.0),
+                      color: const Color.fromARGB(14, 236, 159, 14),
+                    ),
+                  ),
+                ),
+              );
+            }).toList(),
           ],
         ),
-      ],
+      ),
     );
   }
-}
 
-class ClickableBodyPartContainer extends StatelessWidget {
-  final String partName;
-  final String partDescription;
-  final double width;
-  final double height;
-
-  ClickableBodyPartContainer({
-    required this.partName,
-    required this.partDescription,
-    required this.width,
-    required this.height,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // Show dialog with part name and description
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: Text(partName),
-              content: Text(partDescription),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('Close'),
-                ),
-              ],
-            );
-          },
+  void showBodyPartDetails(BuildContext context, BodyPart part) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text(
+            'Body Part Details',
+            textAlign: TextAlign.center,
+          ),
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Name: ${part.name}',
+                style: const TextStyle(fontSize: 22),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'Description: ${part.description}',
+                style: const TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'OK',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
         );
       },
-      child: Container(
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Colors.orange.shade500, width: 1),
-          color: Color.fromARGB(14, 236, 159, 14),
-        ),
-      ),
+    );
+  }
+
+  void editBodyPartName(BuildContext context, BodyPart part) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        TextEditingController nameController =
+            TextEditingController(text: part.name);
+        TextEditingController descriptionController =
+            TextEditingController(text: part.description);
+
+        return AlertDialog(
+          title: const Text('Edit Body Part Details'),
+          content: Column(
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: 'Name'),
+              ),
+              TextField(
+                controller: descriptionController,
+                decoration: const InputDecoration(labelText: 'Description'),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                part.name = nameController.text;
+                part.description = descriptionController.text;
+                Navigator.of(context).pop();
+              },
+              child: const Text('Save'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

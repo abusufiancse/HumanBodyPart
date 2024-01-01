@@ -1,0 +1,132 @@
+      BodyPart(
+        name: 'Head',
+        description:
+            'The upper part of the body that contains the brain and sensory organs.',
+        region: Rect.fromPoints(Offset(160, 50), Offset(250, 150)),
+      ),
+      BodyPart(
+        name: 'left Sholder',
+        description:
+            'The upper part of the body that contains the brain and sensory organs.',
+        region: Rect.fromPoints(Offset(100, 190), Offset(200, 150)),
+      ),
+      BodyPart(
+        name: 'RightSholder',
+        description:
+            'The upper part of the body that contains the brain and sensory organs.',
+        region: Rect.fromPoints(Offset(300, 190), Offset(200, 150)),
+      ),
+      BodyPart(
+        name: 'left arm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(90, 190), Offset(150, 280)),
+      ),
+      BodyPart(
+        name: 'Right arm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(270, 280), Offset(330, 190)),
+      ),
+      BodyPart(
+        name: 'Right forearm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(350, 350), Offset(290, 280)),
+      ),
+      BodyPart(
+        name: 'left forearm',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(120, 350), Offset(60, 280)),
+      ),
+      BodyPart(
+        name: 'Right hand',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(350, 350), Offset(290, 280)),
+      ),
+      BodyPart(
+        name: 'Right hand',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(390, 440), Offset(320, 350)),
+      ),
+      BodyPart(
+        name: 'Right hand',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(20, 440), Offset(90, 350)),
+      ),
+      BodyPart(
+        name: 'left chest',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(150, 270), Offset(210, 190)),
+      ),
+      BodyPart(
+        name: 'Right chest',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(270, 270), Offset(210, 190)),
+      ),
+      BodyPart(
+        name: 'Abdomen',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(265, 340), Offset(145, 270)),
+      ),
+      BodyPart(
+        name: 'Pelvis',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(265, 410), Offset(145, 340)),
+      ),
+      BodyPart(
+        name: 'Left Thigh',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(205, 500), Offset(130, 410)),
+      ),
+      BodyPart(
+        name: 'Right Thigh',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(285, 500), Offset(210, 410)),
+      ),
+      BodyPart(
+        name: 'right joint',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(285, 550), Offset(210, 500)),
+      ),
+      BodyPart(
+        name: 'left joint',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(205, 550), Offset(130, 500)),
+      ),
+      BodyPart(
+        name: 'left joint',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(205, 650), Offset(130, 500)),
+      ),
+      BodyPart(
+        name: 'right leg',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(285, 550), Offset(210, 650)),
+      ),
+      BodyPart(
+        name: 'right leg',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(295, 735), Offset(220, 650)),
+      ),
+      BodyPart(
+        name: 'left leg',
+        description:
+            'The central part of the body that includes the chest and abdomen.',
+        region: Rect.fromPoints(Offset(200, 735), Offset(120, 650)),
+      ),
