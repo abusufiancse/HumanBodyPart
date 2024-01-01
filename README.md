@@ -2,4 +2,5 @@
 
 Selectable body mapping
 
-![humna part](https://github.com/abusufiancse/HumanBodyPart/assets/68639263/e9ebc50a-8a70-4a96-b8a9-ead4f3ed463b)
+
+![humna part](https://github.com/abusufiancse/HumanBodyPart/assets/68639263/261b60f9-2780-450f-b6a2-af32d1d43ef2)
